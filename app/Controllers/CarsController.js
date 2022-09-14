@@ -12,11 +12,18 @@ function drawCars() {
   setHTML('listings', template)
 }
 
+function _drawCarsButton() {
+  let template = ''
+  appState.cars.find(c => template += c.CarListingButton)
+  setHTML('listing-button', template)
+}
+
 
 export class CarsController {
   constructor() {
     appState.on('cars', drawCars)
-    this.showCars()
+    appState.on('cars', _drawCarsButton)
+    // this.showCars()
   }
 
   async getCars() {
@@ -27,6 +34,7 @@ export class CarsController {
       Pop.error(error)
     }
   }
+
 
 
   showCars() {
@@ -87,3 +95,4 @@ export class CarsController {
 
 
 }
+

@@ -12,20 +12,19 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>gregslist-async</title>
+  <title>gregslist-api</title>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
+    <nav class="navbar navbar-dark navbar-expand bg-light text-dark no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ms-2">Gregslist</span>
+        <span class="ms-2 text-dark">Gregslist Api!</span>
       </a>
       <div class="d-flex justify-content-between w-100 pe-3">
         <div class="nav-links d-flex gap-3 ms-3">
-          <!-- TODO future Problem learn to use SPA links -->
           <div>
             <h6 class="mb-0 selectable p-2 rounded" onclick="app.carsController.showCars()">Cars</h6>
           </div>
@@ -36,13 +35,13 @@
             <h6 class="mb-0 selectable p-2 rounded">Houses</h6>
           </div>
         </div>
-        <div>
-          <button class="btn btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#rightBar" onclick="app.carsController.addCar()">🚗 Add Car</button>
+        <div id="listing-button">
+
         </div>
       </div>
     </nav>
   </header>
-  <main>
+  <main class="bg-dark">
     <div class="container">
       <div class="row my-5" id="listings">
 
@@ -54,7 +53,7 @@
 
   <div class="offcanvas offcanvas-end" tabindex="-1" id="rightBar" aria-labelledby="rightBarLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="rightBarLabel">Edit Car</h5>
+      <h5 class="offcanvas-title" id="rightBarLabel"></h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body" id="forms">

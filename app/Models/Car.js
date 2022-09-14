@@ -16,7 +16,7 @@ export class Car {
   get CarCardTemplate() {
     return /*html*/`
     <div class="col-md-4 col-lg-3 mb-3"> 
-      <div class="card">
+      <div class="card bg-secondary elevation">
         <img src="${this.imgUrl}" alt="${this.make}-${this.model}" class="img-fluid">
         <div class="card-body">
           <h5 class="text-uppercase">
@@ -84,7 +84,12 @@ export class Car {
       `
   }
 
-
+  get CarListingButton() {
+    return `
+          <button class="btn btn-outline-dark" data-bs-toggle="offcanvas" data-bs-target="#rightBar"
+            onclick="app.carsController.addCar()">Add Car!</button>
+`
+  }
 
 
 }
